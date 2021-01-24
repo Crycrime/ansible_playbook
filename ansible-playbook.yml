@@ -6,7 +6,7 @@
     ansible_python_interpreter: /usr/bin/python3
 #    IMAGE_NAME: docker_image.name
   tasks:
-    - debug: var=ansible_host
+#    - debug: var=ansible_host
     - name: Git pull repo
       git:
         repo: git@github.com:Crycrime/ansible_playbook.git
@@ -20,6 +20,8 @@
         state: present
         push: no
 
-    - name: stop and run docker_container
+    - name: stop docker_container
       command: docker stop node:12
+
+    - name: run docker_container
       command: docker run -d -p8081:8080 node:12
