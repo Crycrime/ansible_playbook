@@ -24,4 +24,4 @@
       shell: docker rm -f container_name > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
 
     - name: run docker_container
-      command: docker run -d -p8081:8080 node:12
+      shell: docker run -d -p8081:8080 node:12
