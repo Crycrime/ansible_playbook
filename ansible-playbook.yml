@@ -1,10 +1,12 @@
 - name: My_ansible_Project v0.1
   gather_facts: false
   hosts: [local]
+  connection: local
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    IMAGE_NAME: docker_image.name
-  connection: local
+#    IMAGE_NAME: docker_image.name
+  tasks:
+    - debug: var=ansible_host
     - name: Git pull repo
       git:
         repo: git@github.com:Crycrime/ansible_playbook.git
@@ -18,5 +20,6 @@
         state: present
         push: no
 
-    - name: run docker_container
+    - name:stop and run docker_container
+      command: docker stop node:12
       command: docker run -d -p8081:8080 node:12
