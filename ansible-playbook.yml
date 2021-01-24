@@ -16,7 +16,8 @@
     - name: Docker container build
       docker_image:
         name: node:12
-        build.dockerfile: ./
+        build:
+          dockerfile: ./
         state: present
         push: no
 
