@@ -17,7 +17,6 @@
     - name: Docker container build
       docker_image:
         name: node_js
-        working_dir: /usr/src/app
         build:
           path: ./
         state: present
