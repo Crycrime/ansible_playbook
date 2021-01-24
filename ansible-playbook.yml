@@ -26,10 +26,10 @@
       community.general.docker_image:
         name: node_js
         build:
-          source: build
           path: ./repo
-          state: present
-          debug: yes
+        state: present
+        debug: yes
+        source: build
 
 
 
