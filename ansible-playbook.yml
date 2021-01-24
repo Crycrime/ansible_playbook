@@ -3,7 +3,7 @@
   hosts: [local]
   connection: local
   vars:
-    ansible_python_interpreter: /usr/bin/python
+    ansible_python_interpreter: /usr/bin/python3
 #    IMAGE_NAME: docker_image.name
   tasks:
 #    - debug: var=ansible_host
@@ -14,24 +14,15 @@
         recursive: yes
         dest: ./repo
 
-  #  - name: Docker container build
-  #    docker_image:
-  #      name: node_js
-  #      docker_host: unix://var/run/docker.sock
-  #      build:
-  #        path: ./repo
-  #      state: present
-
-    - name: docker container
-      community.general.docker_image:
+    - name: Docker container build
+      docker_image:
         name: node_js
+        docker_host: unix://var/run/docker.sock
         build:
           path: ./repo
         state: present
-        debug: yes
         source: build
-
-
+        debug: yes
 
 
 #    - name: stop docker_container
