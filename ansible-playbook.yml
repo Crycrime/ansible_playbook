@@ -12,7 +12,7 @@
         repo: git@github.com:Crycrime/ansible_playbook.git
         clone: yes
         recursive: yes
-        dest: ./
+        dest: ./repo
 
     - name: Docker container build
       docker_image:
