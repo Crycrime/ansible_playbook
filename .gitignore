@@ -6,3 +6,5 @@
 *.tfstate.*
 *.example
 host
+/repo/**
+/repo
