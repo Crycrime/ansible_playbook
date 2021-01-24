@@ -16,10 +16,9 @@
     - name: Docker container build
       docker_image:
         name: node:12
-        force: yes
-        dockerfile: ./
+        build.dockerfile: ./
         state: present
         push: no
 
     - name: run docker_container
-      command: docker run -d node:12
+      command: docker run -it -d node:12
