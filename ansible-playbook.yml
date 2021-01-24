@@ -19,6 +19,9 @@
         force: yes
         dockerfile: ./
         state: present
+        repository: localhost:5000/node_js
+        tag: 1
+        push: yes
 
     - name: run docker_container
       command: docker run -it --name="$IMAGE_NAME" "$IMAGE_NAME" /bin/bash
