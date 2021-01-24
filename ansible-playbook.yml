@@ -17,9 +17,15 @@
     - name: Docker container build
       docker_image:
         name: node_js
+        working_dir: /usr/src/app
         build:
           path: ./
         state: present
+
+#    - name: Docker run image
+#      docker:
+#        name: node_js
+
 
     - name: stop docker_container
       shell: docker rm -f node_js > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
