@@ -14,17 +14,24 @@
         recursive: yes
         dest: ./repo
 
-    - name: Docker container build
-      docker_image:
-        name: node_js
-        docker_host: unix://var/run/docker.sock
-        build:
-          path: ./repo
-        state: present
+  #  - name: Docker container build
+  #    docker_image:
+  #      name: node_js
+  #      docker_host: unix://var/run/docker.sock
+  #      build:
+  #        path: ./repo
+  #      state: present
 
-#    - name: Docker run image
-#      docker:
-#        name: node_js
+    - name: docker container
+      community.general.docker_image:
+        build:
+          name: node_js
+          source: build
+          path: ./repo
+          state: present
+          debug: yes
+
+
 
 
 #    - name: stop docker_container
