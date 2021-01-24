@@ -18,7 +18,7 @@
       docker_image:
         name: node_js
         build:
-          path: ./Dockerfile
+          path: ./test/Dockerfile
         state: present
         push: no
 
