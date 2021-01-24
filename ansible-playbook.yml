@@ -19,7 +19,7 @@
         name: node_js
         docker_host: unix://var/run/docker.sock
         build:
-          path: ./
+          path: ./repo
         state: build
 
 #    - name: Docker run image
