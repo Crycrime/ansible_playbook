@@ -27,8 +27,8 @@
 #        name: node_js
 
 
-    - name: stop docker_container
-      shell: docker rm -f node_js > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
+#    - name: stop docker_container
+#      shell: docker rm -f node_js > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
 
-    - name: Run docker_container
-      command: docker run -it -d --name node_js -p8081:8080 node:12
+#    - name: Run docker_container
+#      command: docker run -it -d --name node_js -p8081:8080 node:12
