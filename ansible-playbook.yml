@@ -15,6 +15,7 @@
 
     - name: Docker container build
       docker_image:
+        name: node_js
         force: yes
         dockerfile: ./
         state: present
