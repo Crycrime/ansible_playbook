@@ -16,6 +16,7 @@
     - name: Docker container build
       docker_image:
         name: node-js:latest
+        pull: node:12
         force: yes
         dockerfile: ./
         state: present
