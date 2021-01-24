@@ -10,6 +10,8 @@
     - name: Git pull repo
       git:
         repo: git@github.com:Crycrime/ansible_playbook.git
+        clone: yes
+        recursive: yes
         dest: ./
 
     - name: Docker container build
