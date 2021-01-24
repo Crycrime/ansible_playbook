@@ -21,7 +21,7 @@
         push: no
 
     - name: stop docker_container
-      command: docker stop node:12
+      command: docker stop node:12 || true && docker rm node:12 || true
 
     - name: run docker_container
       command: docker run -d -p8081:8080 node:12
