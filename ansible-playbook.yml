@@ -24,8 +24,8 @@
 
     - name: docker container
       community.general.docker_image:
+        name: node_js
         build:
-          name: node_js
           source: build
           path: ./repo
           state: present
