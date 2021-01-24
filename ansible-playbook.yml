@@ -14,10 +14,9 @@
         dest: ./
 
     - name: Docker container build
-      docker_container:
+      community.general.docker_container:
         name: node-js
-        auto_remove: yes
-        build:
+          build:
           path: ./
           source: Build
         state: present
