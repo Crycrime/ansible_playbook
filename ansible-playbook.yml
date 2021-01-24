@@ -17,9 +17,10 @@
     - name: Docker container build
       docker_image:
         name: node_js
+        docker_host: unix://var/run/docker.sock
         build:
           path: ./
-        state: present
+        state: build
 
 #    - name: Docker run image
 #      docker:
