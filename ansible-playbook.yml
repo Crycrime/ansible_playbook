@@ -20,7 +20,7 @@
         docker_host: unix://var/run/docker.sock
         build:
           path: ./repo
-        state: build
+        state: present
 
 #    - name: Docker run image
 #      docker:
