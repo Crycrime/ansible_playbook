@@ -20,8 +20,8 @@
         state: present
         push: no
 
-    - name: stop docker_container
-      shell: docker rm -f container_name > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
+#    - name: stop docker_container
+#      shell: docker rm -f container_name > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
 
     - name: run docker_container
       shell: docker run -d -p8081:8080 node:12
