@@ -15,7 +15,7 @@
 
     - name: Docker container build
       docker_image:
-        name: node:12
+        name: node_js
         build:
           path: ./
         state: present
