@@ -3,7 +3,7 @@
   hosts: [local]
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    IMAGE_NAME: docker_container.name
+    IMAGE_NAME: docker_image.name
   tasks:
     - debug: var=ansible_host
   connection: local
@@ -14,11 +14,10 @@
         dest: ./
 
     - name: Docker container build
-      community.general.docker_container:
-        name: node-js
-          build:
-            path: ./
-          source: Build        
+      docker_image:
+        name: node-js:latest
+        force: yes
+        dockerfile: ./
         state: present
         published_ports:
           - 8085:8080
