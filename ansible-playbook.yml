@@ -4,9 +4,7 @@
   connection: local
   vars:
     ansible_python_interpreter: /usr/bin/python3
-#    IMAGE_NAME: docker_image.name
   tasks:
-#    - debug: var=ansible_host
     - name: Git pull repo
       git:
         repo: git@github.com:Crycrime/ansible_playbook.git
@@ -28,4 +26,4 @@
       shell: docker rm -f node_js > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove'
 
     - name: Run docker_container
-      command: docker run -it -d --name node_js -p8081:8080 node_js:latest
+      shell: docker run -it -d --name node_js -p8081:8080 node_js:latest
