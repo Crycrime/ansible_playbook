@@ -8,3 +8,5 @@
 host
 /repo/**
 /repo
+/tgbot
+/tgbot/**
