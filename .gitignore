@@ -10,3 +10,4 @@ host
 /repo
 /tgbot
 /tgbot/**
+*.py
